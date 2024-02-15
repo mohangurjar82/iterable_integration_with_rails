@@ -5,5 +5,6 @@ class Event < ApplicationRecord
   def create_event_in_iterable
     iterable_service = IterableService.new
     iterable_service.create_event(user, self)
+    email_notification(user, self) if event_type == "Event B"
   end
 end
