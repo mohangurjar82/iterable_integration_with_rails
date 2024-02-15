@@ -1,0 +1,41 @@
+<%= button_to 'Create Event A', create_event_a_path, method: :post, params: { name: 'Event A' }, class: 'btn' %>
+
+<%= button_to 'Create Event B', create_event_b_path, method: :post, params: { name: 'Event B' }, class: 'btn' %>
+
+<hr>
+<h2>Event List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<style>
+  .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+</style>
